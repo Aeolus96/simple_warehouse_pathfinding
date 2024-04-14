@@ -33,8 +33,8 @@ Pathfinding using A* Algorithm: `f(n) = g(n) + h(n)`
 
 ### Warehouse
 
-- The simulation is limited to a single warehouse loaded from a PNG image `warehouse_1.png`.
-- Warehouse layout and item inventory can be changed by modifying the `warehouse_1.png` file. An easy way to edit images is via VS Code Extension [Luna Paint](https://marketplace.visualstudio.com/items?itemName=Tyriar.luna-paint)
+- The simulation is limited to a single warehouse loaded from a PNG image `warehouse.png`.
+- Warehouse layout and item inventory can be changed by modifying the `warehouse.png` file. An easy way to edit images is via VS Code Extension [Luna Paint](https://marketplace.visualstudio.com/items?itemName=Tyriar.luna-paint)
 - Example image:
 - <!-- markdownlint-disable MD033 -->
   <img src="warehouse_example.png" width="300" height="300" alt="Warehouse Example">
@@ -64,7 +64,7 @@ Pathfinding using A* Algorithm: `f(n) = g(n) + h(n)`
    python3 run.py
    ```
 
-## Adding New Simulation Jobs
+### Adding New Simulation Jobs
 
 To add new simulation jobs, you can create instances of the `Job` class and configure them with the desired robot positions, pickup positions, and dropoff positions. Simply create a new `Job` instance and use the `add_robot` method to add robots to the simulation. Then, call the `simulate_warehouse` method to run the simulation.
 
@@ -83,7 +83,7 @@ new_job.add_robot((0, 2), (4, 8), (0, 2))  # Pickup Red and dropoff at starting 
 new_job.simulate_warehouse()
 ```
 
-## Slow Down Simulation or change image scale
+### Slow Down Simulation or Change Image Scale
 
 In `run.py`, you can change `image_scale_factor` variable to change the size of the displayed image related to the grid size.
 

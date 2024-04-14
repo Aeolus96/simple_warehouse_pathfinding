@@ -2,8 +2,8 @@
 
 # Implementing Warehouse Inventory Management using A* Algorithm for Autonomous Robot Pathfinding
 
-import time
 import os
+import time
 
 import cv2
 import numpy as np
@@ -462,7 +462,7 @@ class Job:
 if __name__ == "__main__":
     grid = []
     script_dir = os.path.dirname(os.path.abspath(__file__))  # Get the directory of the current script
-    file_path = os.path.join(script_dir, "warehouse_1.png")  # Construct the absolute path to the input PNG file
+    file_path = os.path.join(script_dir, "warehouse.png")  # Construct the absolute path to the input PNG file
     grid = Grid(file_path)  # Create the grid from the image
     print(grid)
 
