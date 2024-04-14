@@ -1,6 +1,6 @@
 # Warehouse Inventory Management Simulation
 
-This Python script simulates warehouse inventory management using the A* algorithm for autonomous robot pathfinding. It loads a grid representation of a warehouse from a PNG image and allows users to specify robot missions (pickup and dropoff positions). The robots navigate the warehouse to complete their missions efficiently.
+This Python project simulates warehouse inventory management using the A* algorithm for autonomous robot pathfinding. It loads a grid representation of a warehouse from a PNG image and allows users to specify robot missions (pickup and dropoff positions). The robots navigate the warehouse to complete their missions efficiently.
 
 ## Description
 
@@ -45,7 +45,7 @@ Pathfinding using A* Algorithm: `f(n) = g(n) + h(n)`
 
 ## Dependencies
 
-- Python >= 3.8
+- Python >= 3.10
 - numpy
 - opencv-python
 - Pillow
@@ -55,14 +55,16 @@ Pathfinding using A* Algorithm: `f(n) = g(n) + h(n)`
 1. Install the required dependencies using pip:
 
    ```bash
-   pip3 install -r requirements.txt
+   pip install -r requirements.txt
    ```
 
 2. Run the simulation script:
 
    ```bash
-   python3 run.py
+   python run.py
    ```
+
+> Make sure correct python environment is sourced. Tested with Python > 3.10. Even though not tested with older versions, it will likely work above 3.8 with the required libraries installed.
 
 ### Adding New Simulation Jobs
 
