@@ -2,10 +2,8 @@
 
 # Implementing Warehouse Inventory Management using A* Algorithm for Autonomous Robot Pathfinding
 
-# A* Algorithm:
-# f(n) = g(n) + h(n) where f(n) = total cost of path, g(n) = cost of path, h(n) = heuristic value of path
-
 import time
+import os
 
 import cv2
 import numpy as np
@@ -436,6 +434,8 @@ class Job:
     def simulate_warehouse(self) -> None:
         """Main function to test the A* algorithm in warehouse environment"""
 
+        print("Starting new simulation " + "-" * 50)
+
         try:
             for steps in range(self.max_steps):
                 print(f"Time Step: {steps} " + "-" * 30)
@@ -451,7 +451,7 @@ class Job:
                 if all(robot.mission_complete for robot in self.robots):
                     break
 
-            print("Simulation complete" + "-" * 50)
+            print("Simulation complete " + "-" * 50)
 
         except Exception as e:
             print(f"---------------- Exception in simulate_warehouse ----------------\n{e}")
@@ -461,7 +461,9 @@ class Job:
 
 if __name__ == "__main__":
     grid = []
-    grid = Grid("warehouse_1.png")  # Load grid from PNG image
+    script_dir = os.path.dirname(os.path.abspath(__file__))  # Get the directory of the current script
+    file_path = os.path.join(script_dir, "warehouse_1.png")  # Construct the absolute path to the input PNG file
+    grid = Grid(file_path)  # Create the grid from the image
     print(grid)
 
     ###########################################################################
@@ -472,7 +474,7 @@ if __name__ == "__main__":
     # Parameters for visualization:
     image_scale_factor = 50  # Scale factor for image display
     # NOTE: (grid size * image_scale_factor = display image size)
-    sim_time_step = 0.05  # seconds between each iteration of the simulation
+    sim_time_step = 0.01  # seconds between each iteration of the simulation
 
     # Make jobs to run warehouse simulation:
     test_1 = Job(image_scale_factor, sim_time_step)
@@ -496,3 +498,5 @@ if __name__ == "__main__":
 
     ###########################################################################
     ###########################################################################
+
+# End of File
